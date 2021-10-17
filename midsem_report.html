@@ -1,0 +1,383 @@
+   <!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CS460-Project</title>
+</head>
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Stationarity of data And its Importance:</h2>
+    <p> 
+        Stationarity is a statistical property
+        <ul>
+            <li>
+                Constant mean  </li>
+
+            <li>
+                Constant Variance
+            </li>
+
+            <li>No Seasonality
+            </li>
+            <ul>
+                <li> Repeating trend or pattern over time   </li>
+            </ul>
+
+        </ul>
+
+    </p>
+    <p> 
+        To convert a Non-Stationary Data into Stationary.There are different ways to kill Non-Stationarity of different types.
+        <ul>
+            <li>
+                Differencing , when Y(t) is following a linear trend.Y(t)=Y(t)-Y(t-1)
+
+            </li>   
+            <li>
+                Sometime we need to do multiple time Differencing.
+            </li>
+
+            <li>Sometimes we take Y(t)=LOG(Y(t)) in case where Y(t) is ofexponential type forms.
+            </li>
+            
+            <li> Seasonal differencing Y(t)=Y(t)-Y(t-1)</li>
+            
+
+        </ul>
+
+    </p>
+
+
+
+    <hr>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul> 
+        	<li>
+        	</li>
+        
+       	 <li>
+        	</li>
+        
+        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>MODEL:</h2>
+    <p> 
+        A simple combination of Auto regression and Moving Average model.
+	<h3>Auto Regression:</h3> Uses Past Values to make a prediction.
+	<br/>
+	<img src="AR1.png" alt="Work Flow" width="900" height="500"><br/>
+        
+        <h3>Moving Average:</h3> Uses Past errors to make a prediction.
+	<br/>
+	<img src="MA1.png" alt="Work Flow" width="900" height="500"><br/>
+        
+        
+        <h3>ARMA model:</h3> Uses Past errors and Past values to make a prediction.
+	<br/>
+	<img src="ARMA1.png" alt="Work Flow" width="900" height="500"><br/>
+        <ul> 
+        	<li> εn is the error in Ynprediction
+        	</li>
+        
+       	 <li> βi and θj are coefficients
+        	</li>
+       
+        
+        </ul>
+        
+        
+    </p>
+
+
+
+    <hr>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <h2>Finding parameters for model:</h2>
+    <p>
+    We have used ACF plots, PACF plots and AIC scores to set the model function and find p,q,d,P,D,Q and s values.
+
+
+We use ACF And PACF plots, which measure the correlation between current time period and previous time lags.
+    
+        <ul>
+            <li><h3>Auto Correlation Function:</h3>
+            	Measure direct and indirect effect of previous time lags on current value.Used to find order of Moving Average Model.
+            	<br/>
+	<img src="acf.png" alt="Work Flow" width="900" height="500"><br/>
+	
+            </li>
+
+            <li><h3>Partial Auto Correlation Function:</h3>
+                Measure only direct effect of previous time lags on current value value.Used to find order of Auto Regressive Model.
+                <br/>
+	<img src="pacf.png" alt="Work Flow" width="900" height="500"><br/>
+            </li>
+
+            <li><h3>AIC:</h3>
+               We mainly used AIC score for model fitting upto ARIMA model but for SARIMAX we used the ACF and PACF plots to set the model function.AIC lets us to  test how well our model fits the data set without over-fitting it. The AIC score rewards models that achieve a high goodness-of-fit score and penalizes them if they become overly complex.
+            </li>
+
+
+
+
+
+        </ul>
+
+    </p>
+
+
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h2>Predictions:</h2>
+    <p>
+        <ul>
+            <li> <h3>{Monthly Average Temperature Prediction using {ARIMA(4,0,4)}}:</h3>
+               Trained for 450 months and Tested for next 30 months.
+ It has a RMSE of 2.935 for Mean temp being 25.051 and AIC = 1878.252.
+ 
+                <br/>
+	<img src="Monthly Average Temp Prediction ARIMA.png" alt="Work Flow" width="900" height="500"><br/>
+            </li>
+
+            <li> <h3>Monthly Average Temp Prediction SARIMA((2,0,2),(3,0,3,12))}:</h3>
+                Trained for 450 months and Tested for next 30 months.
+ It has a RMSE of 1.820 for Mean temp being 25.051 and AIC = 1456.189
+ 
+ 
+                <br/>
+	<img src="Monthly Average Temp Prediction SARIMA.png" alt="Work Flow" width="900" height="500"><br/>
+ 
+            </li>
+
+            <li> <h3>Monthly Average Temp Prediction SARIMAX (Surface Pressure)((2,0,2),(3,0,3,12))}:</h3>Trained for 450 months and Tested for next 30 months.
+ It has a RMSE of 1.75 for Mean temp being 25.051 and AIC = 1450.676
+ 
+ 
+ 
+ 
+                <br/>
+	<img src="Monthly Average Temp Prediction SARIMAX (Surface Pressure).png" alt="Work Flow" width="900" height="500"><br/>
+            </li>
+ 
+ 
+ 		<li><h3>Monthly Average Temp Prediction SARIMAX (Precipitation)((2,0,2),(3,0,3,12))}:</h3>
+ 		Trained for 450 months and Tested for next 30 months.
+ It has a RMSE of 1.658 for Mean temp being 25.051 and AIC = 1405.498.
+ 		
+ 		
+ 		
+                <br/>
+	<img src="Monthly Average Temp Prediction SARIMAX (Precipitation).png" width="900" height="500"><br/>
+ 		
+        	</li>
+        
+        
+
+
+
+
+        </ul>
+
+    </p>
+
+
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Conclusion and Future Plans:</h2>
+    <p>
+     
+    Mean of Temperature over Test data is 25.051 celcius.
+    
+    <br/>
+	<img src="Table.png" alt="Work Flow" width="900" height="500"><br/>
+            </li>
+    
+    
+        <ul>
+            <li>
+                We see here that the model SARIMAX with exogenous variable as Precipitation is most accurate of all.
+            </li>
+
+            <li>
+                Using SARIMAX model we were unable to tune it directly using AIC value so plan to do it.
+            </li>
+
+            <li>
+Our prediction for day to day average temperature using any of the above model was not good. We are thinking to use RNN (mainly LSTM) and see how it works.
+		</li>
+
+		<li>
+                We will try to change the model function of SARIMAX and make it to depend on past values of Exogenous variable.
+            </li>
+
+
+
+        </ul>
+
+    </p>
+
+
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
