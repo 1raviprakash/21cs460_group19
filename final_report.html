@@ -184,5 +184,237 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
 <br/>
 <hr>
 
-<h2 style="color:blue">RNN Model(Post Midsem)</h2>	
+<h2 style="color:blue">RNN Model(Post Midsem)</h2>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <h2>Recurrent Neural Networks and why we choose it:</h2>
+    <p>
+     RNNs are the types of neural networks designed for capturing information from sequences or time
+     series data.
+    	
+     <h3> Problems with ANN  </h3>
+        
+        <ul>
+           <li>
+                Variable size of input/output neurons.  
+           </li>
+           In timeseries we may change the number of inputs at a time to the neural network, so for 		that we have set the fixed number of neurons in a layer to a high value. But in RNNs 		this does not happen.
+           
+           <li>
+                Too much computations.
+           </li>
+           In ANN we have to feed vectors representing each data point and the result (prediction)
+           will also be similar type of data vectors. So it will be a too much 
+           computation.           
+
+           <li>
+            	No parameter sharing
+           </li>
+           
+          
+       </ul>
+  
+    </p>
+    
+    
+    
+    <p> 
+         
+         <img src="RNN-rolled.png" style="width:15%"> <br/>   
+         In the above diagram, a chunk of neural network, A, looks at some input x_t and outputs a 	   	value h_t. A loop allows information to be passed from one step of the network to the next.
+         
+         
+         
+         
+          A recurrent neural network can be thought of as multiple copies of the same network, each 	passing a message to a successor. Consider what happens if we unroll the loop: <br/>
+       
+         
+         
+         <img src="RNN-unrolled.png" style="width:70%"> <br/>  
+        This chain-like nature reveals that recurrent neural networks are intimately related to 		sequences and lists. They are the natural architecture of neural network to use for such data.
+        
+   </p>
+
+
+
+    <hr>
+
+
+
+
+
+
+
+
+
+
+    <h2>Types of RNNs:</h2>
+    <p>
+     RNNs are the types of neural networks designed for capturing information from sequences or time
+     series data.
+    	
+        
+        <ul>
+           <li>
+           	One to one
+           </li>
+           
+           <li>
+               One to many
+           </li>
+           <li>
+           	Many to one           
+           </li>
+
+           <li>
+            	Many to many
+           </li>
+           
+          
+       </ul>
+       <img src="tensorflow-types-of-rnn.png" style="width:70%"> <br/> 
+  
+    </p>
+ 
+      
+
+
+
+    <hr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     <h2>Problems in RNNs:</h2>
+    <p>
+    
+    <img src="Schematic-diagram-of-backpropagation-training-algorithm-and-typical-neuron-model.jpg" style="width:70%"> <br/> 
+    	
+        
+        <ul>
+           <li>
+           	Vanishing gradient
+           </li>
+           As numbers of hidden layers grows, gradient become very small and weights will hardly change.This will hamper the learning process.
+           
+           <li>
+               Exploding Gradient
+           </li>
+           When individual derivatives are large,the final derivate will also become huge and weights would change drastically.
+        
+          
+       </ul>
+       
+       
+       Vanishing gradient problem is more in case of timeseries prediction. 
+      
+    </p>
+ 
+ 
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>LSTM :The saver</h2>
+    <p>
+    Long Short Term Memory networks – usually just called “LSTMs” – are a special kind of RNN, capable of learning long-term dependencies. They were introduced by Hochreiter & Schmidhuber (1997).LSTMs are explicitly designed to avoid the long-term dependency problem.
+    All recurrent neural networks have the form of a chain of repeating modules of neural network. In standard RNNs, this repeating module will have a very simple structure, such as a single tanh layer.	<br/>
+    <img src="LSTM3-SimpleRNN.png" style="width:80%"> <br/>
+    
+    
+    
+    LSTMs also have this chain like structure, but the repeating module has a different structure. Instead of having a single neural network layer, there are four, interacting in a very special way.<br/>
+     
+     
+    
+
+
+
+
+
+
+        <ul>
+           <li>
+           	Idea Behind LSTMs
+           </li>
+           The key to LSTMs is the cell state, the horizontal line running through the top of the diagram. It runs straight down the entire chain, with only some minor linear interactions. It’s very easy for information to just flow along it unchanged.
+           <br/>
+     <img src="LSTM3-C-line.png" style="width:80%"> <br/>
+           
+           
+           The LSTM does have the ability to remove or add information to the cell state, carefully regulated by structures called gates.Gates are a way to optionally let information through. They are composed out of a sigmoid neural net layer and a pointwise multiplication operation.
+           <br/>
+     <img src="LSTM3-gate.png" style="width:10%"> <br/>
+
+
+
+
+           <li>
+           A general LSTM structure 
+           
+           </li>
+                <br/> <img src="5.png" style="width:60%"> <br/>
+           
+           
+          
+       </ul>
+       
+       
+       Vanishing gradient problem is more in case of timeseries prediction. 
+      
+    </p>
+ 
+ 
+    <hr>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </body>
