@@ -200,15 +200,12 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
 	
 	
 	
-	
-	
-	
-    <h3>Recurrent Neural Networks and why we choose it:</h3>
+    <h2>Recurrent Neural Networks and why we choose it:</h2>
     <p>
      RNNs are the types of neural networks designed for capturing information from sequences or time
      series data.
     	
-     <h4> Problems with ANN  </h4>
+     <h3> Problems with ANN  </h3>
         
         <ul>
            <li>
@@ -232,11 +229,11 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
   
     </p>
     
-    
+        <hr>
     
     <p> 
          
-         <img src="RNN-rolled.png" style="width:15%"> <br/>   
+         <img src="RNN-rolled.png" style="width:10%"> <br/>   
          In the above diagram, a chunk of neural network, A, looks at some input x_t and outputs a 	   	value h_t. A loop allows information to be passed from one step of the network to the next.
          
          
@@ -246,7 +243,7 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
        
          
          
-         <img src="RNN-unrolled.png" style="width:50%"> <br/>  
+         <img src="RNN-unrolled.png" style="width:70%"> <br/>  
         This chain-like nature reveals that recurrent neural networks are intimately related to 		sequences and lists. They are the natural architecture of neural network to use for such data.
         
    </p>
@@ -264,7 +261,7 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
 
 
 
-    <h3>Types of RNNs:</h3>
+    <h2>Types of RNNs:</h2>
     <p>
      RNNs are the types of neural networks designed for capturing information from sequences or time
      series data.
@@ -288,7 +285,7 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
            
           
        </ul>
-       <img src="tensorflow-types-of-rnn.png" style="width:50%"> <br/> 
+       <img src="tensorflow-types-of-rnn.png" style="width:70%"> <br/> 
   
     </p>
  
@@ -306,10 +303,10 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
     
     
     
-     <h3>Problems in RNNs:</h3>
+     <h2>Problems in RNNs:</h2>
     <p>
     
-    <img src="Schematic-diagram-of-backpropagation-training-algorithm-and-typical-neuron-model.jpg" style="width:50%"> <br/> 
+    <img src="Schematic-diagram-of-backpropagation-training-algorithm-and-typical-neuron-model.jpg" style="width:70%"> <br/> 
     	
         
         <ul>
@@ -348,11 +345,11 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
 
 
 
-    <h3>LSTM :The saver</h3>
+    <h2>LSTM :The saver</h2>
     <p>
     Long Short Term Memory networks – usually just called “LSTMs” – are a special kind of RNN, capable of learning long-term dependencies. They were introduced by Hochreiter & Schmidhuber (1997).LSTMs are explicitly designed to avoid the long-term dependency problem.
     All recurrent neural networks have the form of a chain of repeating modules of neural network. In standard RNNs, this repeating module will have a very simple structure, such as a single tanh layer.	<br/>
-    <img src="LSTM3-SimpleRNN.png" style="width:60%"> <br/>
+    <img src="LSTM3-SimpleRNN.png" style="width:80%"> <br/>
     
     
     
@@ -372,7 +369,7 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
            </li>
            The key to LSTMs is the cell state, the horizontal line running through the top of the diagram. It runs straight down the entire chain, with only some minor linear interactions. It’s very easy for information to just flow along it unchanged.
            <br/>
-     <img src="LSTM3-C-line.png" style="width:60%"> <br/>
+     <img src="LSTM3-C-line.png" style="width:80%"> <br/>
            
            
            The LSTM does have the ability to remove or add information to the cell state, carefully regulated by structures called gates.Gates are a way to optionally let information through. They are composed out of a sigmoid neural net layer and a pointwise multiplication operation.
@@ -386,23 +383,178 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
            A general LSTM structure 
            
            </li>
-                <br/> <img src="5.png" style="width:45%"> <br/>
+                <br/> <img src="5.png" style="width:60%"> <br/>
            
            
           
        </ul>
-       
-       
-       . 
+ 
       
     </p>
  
  
     <hr>
-	
-	
-	
-	
+
+
+
+
+
+    <h2>Our Prediction Model</h2>
+        <h2>Monthly Average Prediction</h2>
+        <ul>
+           <li>
+           	<h3>Single LSTM with hidden Dense layer</h3>
+           	
+           </li>
+           Trained for 374 months and predicting for next 86 months.
+           <br/>
+           <img src="MONTHLY_RNN_LSTM_DAILY_SingleLstm_HiddenDense.png" style="width:30%"> <br/>
+           Train Score: 1.36 RMSE<br/>
+           Test Score: 1.63 RMSE
+           
+           
+           
+           <li>
+           	<h3>Stacked LSTM with two  hidden layers (1 dense layer and 1 LSTM layer)</h3>
+           	
+           </li>
+           Trained for 374 months and predicting for next 86 months.
+           <br/>
+           <img src="MONTHLY_RNN_LSTM_DAILY_LSTM and Dense Hidden layers.png" style="width:30%"> <br/>
+           Train Score: 1.12 RMSE<br/>
+           Test Score: 1.47 RMSE
+           
+           
+           
+           
+           <li>
+           	<h3>Bi-Directional LSTM</h3>
+           	
+           </li>
+           Trained for 374 months and predicting for next 86 months.
+           <br/>
+           <img src="MONTHLY_RNN_LSTM_DAILY_Bi-directional LSTM.png" style="width:30%"> <br/>
+           Train Score: 1.20 RMSE<br/>
+           Test Score: 1.44 RMSE
+           
+           
+           
+           <li>
+           	<h3>ConvLSTM</h3>
+           	
+           </li>
+           Trained for 374 months and predicting for next 86 months.
+           <br/>
+           <img src="MONTHLY_RNN_LSTM_ConvLSTM.png" style="width:30%"> <br/>
+           Train Score: 1.16 RMSE<br/>
+           Test Score: 1.51 RMSE
+
+           
+           
+     
+     
+     
+     
+          
+       </ul>
+ 
+    <hr>
+       
+       
+              <h2>Daily</h2>
+        <ul>
+           <li>
+           	<h3>Single LSTM with hidden Dense layer</h3>
+           	
+           </li>
+           Trained for 11724 days(80 %) and predicting for next 2923 days (20%) .
+           <br/>
+           <img src="DAILY_RNN_LSTM_DAILY_SingleLstm_HiddenDense.png" style="width:30%"> <br/>
+           Train Score: 1.07 RMSE<br/>
+           Test Score: 1.09 RMSE
+           
+           
+           
+           <li>
+           	<h3>Stacked LSTM with two  hidden layers (1 dense layer and 1 LSTM layer)</h3>
+           	
+           </li>
+           Trained for 11724 days(80 %) and predicting for next 2923 days (20%) .
+           <br/>
+           <img src="DAILY_RNN_LSTM_DAILY_SingleLstm_2hiddenlayer(1lstm +1 dense).png" style="width:30%"> <br/>
+           Train Score: 1.06 RMSE<br/>
+           Test Score: 1.10 RMSE
+           
+           
+           
+           
+           <li>
+           	<h3>Bi-Directional LSTM</h3>
+           	
+           </li>
+           Trained for 11724 days(80 %) and predicting for next 2923 days (20%) .
+           <br/>
+           <img src="DAILY_RNN_LSTM_DAILY_Bi-directional LSTM.png" style="width:30%"> <br/>
+           Train Score: 1.08 RMSE<br/>
+           Test Score: 1.10 RMSE
+           
+           
+           
+           <li>
+           	<h3>ConvLSTM</h3>
+           	
+           </li>
+           Trained for 11724 days(80 %) and predicting for next 2923 days (20%) .
+           <br/>
+           <img src="DAILY_RNN_LSTM_ConvLSTM.png" style="width:30%"> <br/>
+           Train Score: 1.08 RMSE<br/>
+           Test Score: 1.10 RMSE
+
+           
+           
+     
+     
+     
+     
+          
+       </ul>
+ 
+
+ 
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    	
 	
 	
 	
