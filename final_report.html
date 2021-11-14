@@ -654,6 +654,78 @@ Bidirectional LSTM layer with 100 neurons and  no hidden dense layer this time. 
 
 
 
+	<table>
+		<tr> <th>Daily average Temperature Prediction<th></tr>
+		<tr>
+			<th>Sl.No</th>
+			<th>Model Type</th>
+			<th>Model</th>
+			<th>Test score (RMSE)</th>
+		</tr>
+		<tr>
+			<th>1</th>
+			<th>ARIMA</th>
+			<th>-</th>
+			<th>very High</th>
+		
+		</tr>
+		<tr>
+			<th>2</th>
+			<th>SARIMA</th>
+			<th>-</th>
+			<th>very high</th>
+		
+		</tr>
+		<tr>
+			<th>3</th>
+			<th>SARIMAX(PRECIPITATION)</th>
+			<th>-</th>
+			<th>very high</th>
+		
+		</tr>
+		<tr>
+			<th>4</th>
+			<th>SARIMAX(SURFACE PRESSURE)</th>
+			<th>-</th>
+			<th>very high</th>
+		
+		</tr>
+		<tr>
+			<th>5</th>
+			<th>SINGLE LSTM</th>
+			<th>1 DENSE LAYER</th>
+			<th>1.09</th>
+		
+		</tr>
+		<tr>
+			<th>6</th>
+			<th>STACKED LSTM</th>
+			<th>Two hidden layer(1 dense layer+1 LSTM layer)</th>
+			<th>1.10</th>
+		
+		
+		</tr>
+		<tr>
+			<th>7</th>
+			<th>Bi directional LSTM</th>
+			<th>Bi directional LSTM</th>
+			<th>1.10</th>
+		
+		
+		
+		</tr>
+		<tr>
+		
+			<th>8</th>
+			<th>ConvLSTM</th>
+			<th>ConvLSTM2D</th>
+			<th>1.10</th>
+		
+		
+		</tr>
+	</table>	
+
+
 	
 	
 </body>
