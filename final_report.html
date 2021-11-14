@@ -130,49 +130,6 @@ We use ACF And PACF plots, which measure the correlation between current time pe
 
 
  <h3>Predictions:</h3>
-    <p>
-        <ul>
-            <li> <h4>{Monthly Average Temperature Prediction using {ARIMA(4,0,4)}}:</h4>
-               Trained for 450 months and Tested for next 30 months.
- It has a RMSE of 2.935 for Mean temp being 25.051 and AIC = 1878.252.
- 
-                <br/>
-	<img src="Monthly Average Temp Prediction ARIMA.png" alt="Work Flow" ><br/>
-            </li>
-
-            <li> <h4>Monthly Average Temp Prediction SARIMA((2,0,2),(3,0,3,12))}:</h4>
-                Trained for 450 months and Tested for next 30 months.
- It has a RMSE of 1.820 for Mean temp being 25.051 and AIC = 1456.189
- 
- 
-                <br/>
-	<img src="Monthly Average Temp Prediction SARIMA.png" alt="Work Flow" ><br/>
- 
-            </li>
-
-            <li> <h4>Monthly Average Temp Prediction SARIMAX (Surface Pressure)((2,0,2),(3,0,3,12))}:</h4>Trained for 450 months and Tested for next 30 months.
- It has a RMSE of 1.75 for Mean temp being 25.051 and AIC = 1450.676
- 
- 
- 
- 
-                <br/>
-	<img src="Monthly Average Temp Prediction SARIMAX (Surface Pressure).png" alt="Work Flow"><br/>
-            </li>
- 
- 
- 		<li><h4>Monthly Average Temp Prediction SARIMAX (Precipitation)((2,0,2),(3,0,3,12))}:</h4>
- 		Trained for 450 months and Tested for next 30 months.
- It has a RMSE of 1.658 for Mean temp being 25.051 and AIC = 1405.498.
- 		
- 		
- 		
-                <br/>
-	<img src="Monthly Average Temp Prediction SARIMAX (Precipitation).png"><br/>
- 		
-        	</li>
-        
-    </ul>
 
 <div class="row">
   <div class="column">
@@ -187,22 +144,38 @@ We use ACF And PACF plots, which measure the correlation between current time pe
 
  <div class="column">
     <figure>
-  	<img src="Monthly Average Temp Prediction ARIMA.png" style="width:30%">
-  	<figcaption>Monthly Average Temperature Prediction using ARIMA(4,0,4)}:
-            Trained for 450 months and Tested for next 30 months. It has a RMSE of 2.935 for Mean temp being 25.051 and AIC = 1878.252.
+  	<img src="Monthly Average Temp Prediction SARIMA.png" style="width:30%">
+  	<figcaption><h4>Monthly Average Temp Prediction SARIMA((2,0,2),(3,0,3,12)):
+                Trained for 450 months and Tested for next 30 months.
+ 		It has a RMSE of 1.820 for Mean temp being 25.051 and AIC = 1456.189
+ 
 	 </figcaption>
      </figure>
     
   </div>
   <div class="column">
     <figure>
-  	<img src="Monthly Average Temp Prediction ARIMA.png" style="width:30%">
-  	<figcaption>Monthly Average Temperature Prediction using ARIMA(4,0,4)}:
-            Trained for 450 months and Tested for next 30 months. It has a RMSE of 2.935 for Mean temp being 25.051 and AIC = 1878.252.
+  	<img src="Monthly Average Temp Prediction SARIMAX (surface pressure).png" style="width:30%">
+  	<figcaption>Monthly Average Temp Prediction SARIMAX (Surface Pressure)((2,0,2),(3,0,3,12))}:Trained for 450 months and Tested for next 30 months.
+ 		It has a RMSE of 1.75 for Mean temp being 25.051 and AIC = 1450.676
 	 </figcaption>
      </figure>
     
   </div>
+	 
+    <div class="column">
+    <figure>
+  	<img src="Monthly Average Temp Prediction SARIMAX (precipitation).png" style="width:30%">
+  	<figcaption> Monthly Average Temp Prediction SARIMAX (Precipitation)((2,0,2),(3,0,3,12))
+ 		Trained for 450 months and Tested for next 30 months.
+		 It has a RMSE of 1.658 for Mean temp being 25.051 and AIC = 1405.498.
+
+	 </figcaption>
+     </figure>
+    
+  </div>
+	 
 </div>
 
+	
 </body>
