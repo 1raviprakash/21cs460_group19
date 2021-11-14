@@ -4,6 +4,21 @@
 <head>
     <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
 </script>
+	<style>
+figure {
+  border: 1px #cccccc solid;
+  padding: 4px;
+  margin: auto;
+}
+
+figcaption {
+  background-color: black;
+  color: white;
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
+</style>
     <meta charset="utf-8" />
     <title>CS460-PROJECT GROUP 19</title>
 </head>
@@ -143,6 +158,12 @@ We use ACF And PACF plots, which measure the correlation between current time pe
     
     </ul>
 
-    </p>
+    	<figure>
+  		<img src="Monthly Average Temp Prediction ARIMA.png"  style="width:30%">
+	        <figcaption>Monthly Average Temperature Prediction using {ARIMA(4,0,4)}}:
+               Trained for 450 months and Tested for next 30 months.
+ It has a RMSE of 2.935 for Mean temp being 25.051 and AIC = 1878.252.</figcaption>
+	</figure>
+
 
 </body>
