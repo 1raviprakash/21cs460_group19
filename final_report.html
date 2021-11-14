@@ -43,6 +43,7 @@
     
         
      </ul>
+	We want to use Time series models on the weather data of  Janupur and make prediction on Temperature and Precipitation Values.
      <h3>Stationarity of data And its Importance:</h3>
     <p> 
         Stationarity is a statistical property
@@ -108,7 +109,7 @@ y_{t}=\beta_{0}+\beta_{1} y_{t-1}+\beta_{2} y_{t-2}+.......+\beta_{P} y_{t-P}+\v
     \(\varepsilon_{n}\)  is the error in \(y_{n}\) prediction.
     \(\beta_i\) and \(\theta_j\)  are coefficients.
     
-
+We have used ARIMA,SARIMA,SARIMAX models in the Prediction.The Detail can be found in <a href="midsem_report.html">midsem presentaion</a>.
     
     
         <h3>Finding parameters for model:</h3>
@@ -121,15 +122,12 @@ We use ACF And PACF plots, which measure the correlation between current time pe
         <ul>
             <li><h4>Auto Correlation Function:</h4>
             	Measure direct and indirect effect of previous time lags on current value.Used to find order of Moving Average Model.
-            	<br/>
-	<img src="acf.png" alt="Work Flow"><br/>
 	
             </li>
 
             <li><h3>Partial Auto Correlation Function:</h3>
                 Measure only direct effect of previous time lags on current value value.Used to find order of Auto Regressive Model.
                 <br/>
-	<img src="pacf.png" alt="Work Flow"><br/>
             </li>
 
             <li><h4>AIC:</h4>
