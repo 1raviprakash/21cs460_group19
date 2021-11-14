@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+    <meta charset="utf-8" />
+    <title>CS460-PROJECT GROUP 19</title>
+</head>
+<body>
+    <h2 style="color: red">CS460-Machine Leraning-Project-Final Report</h2>
+    <ul>
+        <li style="color: green">Students::</li>
+        <li>Haraprasad Dhal</li>
+        <li>Raviprakash Singh</li>
+        <li style="color: green">Instructor::</li>
+        <li>Dr. Subhankar Mishra</li>
+    
+    </ul>
+    <h2 style="color:  blue">
+        Goals    
+    </h2>
+
+    <ul>
+        <li>We studied weather data of Jaunpur District in Uttarpradesh to make predictions on it.
+        </li>
+        <li>Prediction of Temperature and Precipitation using Time Series Models(Midsem)</li>
+        <li>Use of RNN Model in Prediction(Post Midsem)</li>
+    </ul>
+                <img src="jaunpur_map.jpg" style="width:35%">    
+    <h2 style="color: blue;">Challenge:</h2>
+    <h2 style="color: blue;">Time Series Methods</h2>
+    <h3>Time Series</h3>
+     <ul>
+            <li>
+                A time series is a series of data points indexed in time order. Most commonly, a time series is a sequence of observation taken at successive <br/> equally spaced points in time.
+                e.g Daily Max and Min Temperature record
+            </li>
+    
+            <li>Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.    </li>
+    
+            <li>Time series forecasting is the use of a model to predict future values based on previously observed values.    </li>
+    
+        
+     </ul>
+     <h3>Stationarity of data And its Importance:</h3>
+    <p> 
+        Stationarity is a statistical property
+        <ul>
+            <li>
+                Constant mean  </li>
+
+            <li>
+                Constant Variance
+            </li>
+
+            <li>No Seasonality
+            </li>
+            <ul>
+                <li> Repeating trend or pattern over time   </li>
+            </ul>
+
+        </ul>
+
+    </p>
+    <p> 
+        To convert a Non-Stationary Data into Stationary.There are different ways to kill Non-Stationarity of different types.
+        <ul>
+            <li>
+                Differencing , when Y(t) is following a linear trend.Y(t)=Y(t)-Y(t-1)
+
+            </li>   
+            <li>
+                Sometime we need to do multiple time Differencing.
+            </li>
+
+            <li>Sometimes we take Y(t)=LOG(Y(t)) in case where Y(t) is ofexponential type forms.
+            </li>
+            
+            <li> Seasonal differencing Y(t)=Y(t)-Y(t-1)</li>
+            
+
+        </ul>
+    <h3>Models:</h3>
+    <h4>Auto Regression:</h4>
+        Uses past Values to make prediction.
+        \[ 
+            
+y_{t}=\beta_{0}+\beta_{1} y_{t-1}+\varepsilon_{t} \longrightarrow \mathrm{AR}(1)
+\\
+y_{t}=\beta_{0}+\beta_{1} y_{t-1}+\beta_{2} y_{t-2}+\varepsilon_{t} \longrightarrow \mathrm{AR}(2)
+\\
+y_{t}=\beta_{0}+\beta_{1} y_{t-1}+\beta_{2} y_{t-2}+.......+\beta_{P} y_{t-P}+\varepsilon_{t} \longrightarrow \mathrm{AR}(P)
+        \]
+    <h4>Moving-Average:</h4>
+     Uses past Error Values to make prediction.
+    \[
+    y_{t}=\beta_{0}+\theta_{1} \varepsilon_{t-1}+\varepsilon_{t} \longrightarrow  \mathrm{MA}(1)\\
+    y_{t}=\beta_{0}+\theta_{1} \varepsilon_{t-1}+\theta_{2} \varepsilon_{t-2}+\varepsilon_{t} \longrightarrow  \mathrm{MA}(2)\\
+
+    y_{t}=\beta_{0}+\theta_{1} \varepsilon_{t-1}+\theta_{2} \varepsilon_{t-2}+...............+\theta_{Q} \varepsilon_{t-Q}+\varepsilon_{t} \longrightarrow  \mathrm{MA}(Q)\\
+
+    \]
+    <h4>ARMA Model:</h4>
+    
+    \(    \\ \quad y_{t}=B_{0}+B_{1} y_{t-1}+...+B_{P} y_{t-P}+\theta_1 \varepsilon_{t-1}+.....+\theta_Q \varepsilon_{t-Q}+\varepsilon_{t} \longrightarrow ARMA(P,Q)\\
+    \)
+    \(\varepsilon_{n}\)  is the error in \(y_{n}\) prediction.
+    \(\beta_i\) and \(\theta_j\)  are coefficients.
+    
+
+    
+    
+        <h3>Finding parameters for model:</h3>
+    <p>
+    We have used ACF plots, PACF plots and AIC scores to set the model function and find p,q,d,P,D,Q and s values.
+
+
+We use ACF And PACF plots, which measure the correlation between current time period and previous time lags.
+    
+        <ul>
+            <li><h4>Auto Correlation Function:</h4>
+            	Measure direct and indirect effect of previous time lags on current value.Used to find order of Moving Average Model.
+            	<br/>
+	<img src="acf.png" alt="Work Flow"><br/>
+	
+            </li>
+
+            <li><h3>Partial Auto Correlation Function:</h3>
+                Measure only direct effect of previous time lags on current value value.Used to find order of Auto Regressive Model.
+                <br/>
+	<img src="pacf.png" alt="Work Flow"><br/>
+            </li>
+
+            <li><h4>AIC:</h4>
+               We mainly used AIC score for model fitting upto ARIMA model but for SARIMAX we used the ACF and PACF plots to set the model function.AIC lets us to  test how well our model fits the data set without over-fitting it. The AIC score rewards models that achieve a high goodness-of-fit score and penalizes them if they become overly complex.
+            </li>
+
+
+
+
+
+        </ul>
+
+    </p>
+
+
+ <h3>Predictions:</h3>
+    <p>
+        <ul>
+            <li> <h4>{Monthly Average Temperature Prediction using {ARIMA(4,0,4)}}:</h4>
+               Trained for 450 months and Tested for next 30 months.
+ It has a RMSE of 2.935 for Mean temp being 25.051 and AIC = 1878.252.
+ 
+                <br/>
+	<img src="Monthly Average Temp Prediction ARIMA.png" alt="Work Flow" ><br/>
+            </li>
+
+            <li> <h4>Monthly Average Temp Prediction SARIMA((2,0,2),(3,0,3,12))}:</h4>
+                Trained for 450 months and Tested for next 30 months.
+ It has a RMSE of 1.820 for Mean temp being 25.051 and AIC = 1456.189
+ 
+ 
+                <br/>
+	<img src="Monthly Average Temp Prediction SARIMA.png" alt="Work Flow" ><br/>
+ 
+            </li>
+
+            <li> <h4>Monthly Average Temp Prediction SARIMAX (Surface Pressure)((2,0,2),(3,0,3,12))}:</h4>Trained for 450 months and Tested for next 30 months.
+ It has a RMSE of 1.75 for Mean temp being 25.051 and AIC = 1450.676
+ 
+ 
+ 
+ 
+                <br/>
+	<img src="Monthly Average Temp Prediction SARIMAX (Surface Pressure).png" alt="Work Flow"><br/>
+            </li>
+ 
+ 
+ 		<li><h4>Monthly Average Temp Prediction SARIMAX (Precipitation)((2,0,2),(3,0,3,12))}:</h4>
+ 		Trained for 450 months and Tested for next 30 months.
+ It has a RMSE of 1.658 for Mean temp being 25.051 and AIC = 1405.498.
+ 		
+ 		
+ 		
+                <br/>
+	<img src="Monthly Average Temp Prediction SARIMAX (Precipitation).png"><br/>
+ 		
+        	</li>
+        
+    
+    </ul>
+
+    </p>
+
+</body>
