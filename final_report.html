@@ -34,6 +34,10 @@ figcaption {
   content: "";
   clear: both;
   display: table;
+}
+
+table, th, td {
+  border:1px solid black;
 }		
 </style>
     <meta charset="utf-8" />
@@ -574,18 +578,11 @@ Bidirectional LSTM layer with 100 neurons and  no hidden dense layer this time. 
  
     <hr>
 
- <h2>Data Set used</h2>
- 	<a href="rnntime.csv"><h3>Data1(Monthly)</h3></a>
-	<a href="DATA_TEMP_DATE_JA_RNN.csv"><h3>Data2(Daily)</h3></a>
-	<a href="DATA_TEMP_DATE_JA2.csv"><h3>Data3</h3></a>
-
-    <hr>
-
-
 
 <h2>Summary of Results:</h2>
 
 	<table>
+		<tr> <th>Monthly average Temperature Prediction<th></tr>
 		<tr>
 			<th>Sl.No</th>
 			<th>Model Type</th>
@@ -593,76 +590,66 @@ Bidirectional LSTM layer with 100 neurons and  no hidden dense layer this time. 
 			<th>Test score (RMSE)</th>
 		</tr>
 		<tr>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
+			<th>1</th>
+			<th>ARIMA</th>
+			<th>ARIMA(4,0,4)</th>
+			<th>2.935</th>
 		
 		</tr>
 		<tr>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
+			<th>2</th>
+			<th>SARIMA</th>
+			<th>SARIMA(2,0,2)(3,0,3,12)</th>
+			<th>1.821</th>
 		
 		</tr>
 		<tr>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
+			<th>3</th>
+			<th>SARIMAX(PRECIPITATION)</th>
+			<th>SARIMAX(2,0,2)(3,0,[1,2,3],12)</th>
+			<th>1.658</th>
 		
 		</tr>
 		<tr>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
+			<th>4</th>
+			<th>SARIMAX(SURFACE PRESSURE)</th>
+			<th>SARIMAX(4,0,4)(3,0,[1,2,3],12)</th>
+			<th>1.756</th>
 		
 		</tr>
 		<tr>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
+			<th>5</th>
+			<th>SINGLE LSTM</th>
+			<th>1 DENSE LAYER</th>
+			<th>1.63</th>
 		
 		</tr>
 		<tr>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-		
-		
-		</tr>
-		<tr>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-		
+			<th>6</th>
+			<th>STACKED LSTM</th>
+			<th>Two hidden layer(1 dense layer+1 LSTM layer)</th>
+			<th>1.47</th>
 		
 		
 		</tr>
 		<tr>
+			<th>7</th>
+			<th>Bi directional LSTM</th>
+			<th>Bi directional LSTM</th>
+			<th>1.44</th>
 		
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
 		
 		
 		</tr>
 		<tr>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
 		
+			<th>8</th>
+			<th>ConvLSTM</th>
+			<th>ConvLSTM2D</th>
+			<th>1.51</th>
 		
 		
 		</tr>
-		
 	</table>	
 
 
