@@ -187,19 +187,6 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
 <h2 style="color:blue">RNN Model(Post Midsem)</h2>
 
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
     <h2>Recurrent Neural Networks and why we choose it:</h2>
     <p>
      RNNs are the types of neural networks designed for capturing information from sequences or time
@@ -408,7 +395,14 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
            </li>
            Trained for 374 months and predicting for next 86 months.
            <br/>
+           Blue colour is actual data, orange colur is Prediction for training data and green is the prediction for test data.
+           
+           <br/>
            <img src="MONTHLY_RNN_LSTM_DAILY_SingleLstm_HiddenDense.png" style="width:30%"> <br/>
+           </br>
+		LSTM layer with 64 neurons and hidden dense layer with 32 neurons. We fit it for 			epochs=100 with loss in mean_squared_error and adam as  optimizer.
+	    </br>
+
            Train Score: 1.36 RMSE<br/>
            Test Score: 1.63 RMSE
            
@@ -420,7 +414,14 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
            </li>
            Trained for 374 months and predicting for next 86 months.
            <br/>
+           Blue colour is actual data, orange colur is Prediction for training data and green is the prediction for test data.
+           
+           <br/>
            <img src="MONTHLY_RNN_LSTM_DAILY_LSTM and Dense Hidden layers.png" style="width:30%"> <br/>
+           
+		</br>
+		Both LSTM layer with 100 neurons and hidden dense layer with 32 neurons. We fit it 			for epochs=100 with loss in mean_squared_error and adam as  optimizer.
+		</br>
            Train Score: 1.12 RMSE<br/>
            Test Score: 1.47 RMSE
            
@@ -433,7 +434,14 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
            </li>
            Trained for 374 months and predicting for next 86 months.
            <br/>
+           Blue colour is actual data, orange colur is Prediction for training data and green is the prediction for test data.
+           
+           <br/>
            <img src="MONTHLY_RNN_LSTM_DAILY_Bi-directional LSTM.png" style="width:30%"> <br/>
+           
+</br>
+Bidirectional LSTM layer with 100 neurons and  no hidden dense layer this time. We fit it for epochs=100 with loss in mean_squared_error and adam as  optimizer.
+</br>
            Train Score: 1.20 RMSE<br/>
            Test Score: 1.44 RMSE
            
@@ -445,7 +453,15 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
            </li>
            Trained for 374 months and predicting for next 86 months.
            <br/>
+           Blue colour is actual data, orange colur is Prediction for training data and green is the prediction for test data.
+           
+           <br/>
            <img src="MONTHLY_RNN_LSTM_ConvLSTM.png" style="width:30%"> <br/>
+           </br>
+ ConvLSTM2D layer with 64 neurons and   hidden dense layer with 32 neurons. We fit it for epochs=100 with loss in mean_squared_error and adam as  optimizer.
+</br>
+
+
            Train Score: 1.16 RMSE<br/>
            Test Score: 1.51 RMSE
 
@@ -469,7 +485,14 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
            </li>
            Trained for 11724 days(80 %) and predicting for next 2923 days (20%) .
            <br/>
+           Blue colour is actual data, orange colur is Prediction for training data and green is the prediction for test data.
+           
+           <br/>
            <img src="DAILY_RNN_LSTM_DAILY_SingleLstm_HiddenDense.png" style="width:30%"> <br/>
+           </br>
+		LSTM layer with 64 neurons and hidden dense layer with 32 neurons. We fit it for 			epochs=100 with loss in mean_squared_error and adam as  optimizer.
+	    </br>
+
            Train Score: 1.07 RMSE<br/>
            Test Score: 1.09 RMSE
            
@@ -481,7 +504,14 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
            </li>
            Trained for 11724 days(80 %) and predicting for next 2923 days (20%) .
            <br/>
+           Blue colour is actual data, orange colur is Prediction for training data and green is the prediction for test data.
+           
+           <br/>
            <img src="DAILY_RNN_LSTM_DAILY_SingleLstm_2hiddenlayer(1lstm +1 dense).png" style="width:30%"> <br/>
+           
+		</br>
+		Both LSTM layer with 100 neurons and hidden dense layer with 32 neurons. We fit it 			for epochs=100 with loss in mean_squared_error and adam as  optimizer.
+		</br>
            Train Score: 1.06 RMSE<br/>
            Test Score: 1.10 RMSE
            
@@ -494,7 +524,14 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
            </li>
            Trained for 11724 days(80 %) and predicting for next 2923 days (20%) .
            <br/>
+           Blue colour is actual data, orange colur is Prediction for training data and green is the prediction for test data.
+           
+           <br/>
            <img src="DAILY_RNN_LSTM_DAILY_Bi-directional LSTM.png" style="width:30%"> <br/>
+           
+</br>
+Bidirectional LSTM layer with 100 neurons and  no hidden dense layer this time. We fit it for epochs=100 with loss in mean_squared_error and adam as  optimizer.
+</br>
            Train Score: 1.08 RMSE<br/>
            Test Score: 1.10 RMSE
            
@@ -506,7 +543,15 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
            </li>
            Trained for 11724 days(80 %) and predicting for next 2923 days (20%) .
            <br/>
+           Blue colour is actual data, orange colur is Prediction for training data and green is the prediction for test data.
+           
+           <br/>
            <img src="DAILY_RNN_LSTM_ConvLSTM.png" style="width:30%"> <br/>
+           </br>
+ ConvLSTM2D layer with 64 neurons and   hidden dense layer with 32 neurons. We fit it for epochs=100 with loss in mean_squared_error and adam as  optimizer.
+</br>
+
+
            Train Score: 1.08 RMSE<br/>
            Test Score: 1.10 RMSE
 
@@ -522,11 +567,6 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
 
  
     <hr>
-
-
-
-
-
 
 
 
@@ -555,11 +595,6 @@ Time Series Based Models Worked Quite Well.Next, We wanted to try RNN Models for
 
 
     	
-	
-	
-	
-	
-	
 	
 	
 	
